@@ -10,20 +10,25 @@
 		<!--final de Estilos-->
 
 		<!--Lógica-Programación-->
-		<script type="text/javascript" src="jsFerreteFacturacion.js"></script>
+		<script SRC="bower_components/angular/angular.min.js" TYPE="text/javascript"></script>
+ 		<script SRC="jsFerreteFacturacion.js" TYPE="text/javascript"></script>
         <!--Final de Lógica-Programación -->
 		
 
-		</head>
-	<body>
-		<div class="CajaUno animated bounceInDown">
-			
-		
-			<form id="FormIngreso">
+        
 
-				<input type="text"  placeholder="Ingrese Precio" id="PrecioUno">
-				<input type="text"  placeholder="Ingrese Precio" id="PrecioDos">
-				<input type="text"  placeholder="Ingrese Precio" id="PrecioTres">
+
+
+		</head>
+	<body ng-app="ferreteFacturacion" ng-controller="controladorFacturacion">
+		<div  class="CajaUno animated bounceInDown">
+			
+			{{test}}
+			<form id="FormIngreso">
+				
+				<input type="text"  id="PrecioUno" ng-model="datos.precioUno">
+				<input type="text"  id="PrecioDos" ng-model="datos.precioDos">
+				<input type="text"  id="PrecioTres" ng-model="datos.precioTres">
 				<br>
 				
 			</form>
@@ -32,9 +37,9 @@
 		<div class="CajaUno animated bounceInLeft">
 			
 			
-			<button  class="MiBotonUTN" onclick="Sumar()" >Sumar</button>
-			<button  class="MiBotonUTN" onclick="Promedio()" >Promedio</button>
-			<button  class="MiBotonUTN" onclick="PrecioFinal()" >Precio Final</button>
+			<button  class="MiBotonUTN" ng-click="Sumar()" >Sumar</button>
+			<button  class="MiBotonUTN" ng-click="Promedio()" >Promedio</button>
+			<button  class="MiBotonUTN" ng-click="PrecioFinal()" >Precio Final</button>
 
 		</div>
 

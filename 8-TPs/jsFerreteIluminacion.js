@@ -8,7 +8,33 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
  */
-function CalcularPrecio () 
-{
- 	
-}
+
+var app = angular.module('ferreteIluminacion',[]);
+
+app.controller('controladorIluminacion',function($scope){
+	$scope.datos={};
+	$scope.datos.CantidadLamparas="Cantidad de lámparas";
+	$scope.datos.PrecioDescuento="Precio con descuento";
+
+	$scope.CalcularPrecio=function(){
+		var temp = parseInt($scope.datos.CantidadLamparas);
+		var result = 0;
+		if (temp>=6) 
+		{
+			result=temp/2
+		}
+		else if ((temp>=5) && true)
+		{
+
+		}
+		else if ((temp>=4) && true)
+		{
+
+		}
+		else if ((temp>=3) && true)
+		{
+
+		}
+  		$scope.datos.PrecioDescuento=0;
+ 	}
+});
