@@ -22,13 +22,13 @@
 		
 			<form id="FormIngreso">
 
-				<input type="text"  ng-model="datos.CantidadLamparas" id="Cantidad">
+				<input type="text" ng-model="datos.CantidadLamparas" id="Cantidad">
 				<SELECT id="Marca" > <!--	SEGUIR ACA	-->
-					<OPTION ng-model="ArgentinaLuz">ArgentinaLuz</OPTION>
-					<OPTION >FelipeLamparas</OPTION>
-					<OPTION >JeLuz</OPTION>
-					<OPTION >HazIluminacion</OPTION>
-					<OPTION >Osram</OPTION>
+					<OPTION value="ArgentinaLuz" selected="selected">ArgentinaLuz</OPTION>
+					<OPTION value="FelipeLamparas">FelipeLamparas</OPTION>
+					<OPTION value="JeLuz">JeLuz</OPTION>
+					<OPTION value="HazIluminacion">HazIluminacion</OPTION>
+					<OPTION value="Osram">Osram</OPTION>
 				</SELECT>
 					<input type="text" readonly ng-model="datos.PrecioDescuento" id="precioDescuento">
 			</form>

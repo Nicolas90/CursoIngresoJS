@@ -15,26 +15,70 @@ app.controller('controladorIluminacion',function($scope){
 	$scope.datos={};
 	$scope.datos.CantidadLamparas="Cantidad de lámparas";
 	$scope.datos.PrecioDescuento="Precio con descuento";
+	var sel = document.getElementById("Marca");
+
 
 	$scope.CalcularPrecio=function(){
 		var temp = parseInt($scope.datos.CantidadLamparas);
-		var result = 0;
+		var result = 35;
+
+		//alert(sel.options[sel.selectedIndex].value);
+
 		if (temp>=6) 
 		{
-			result=temp/2
+			result=result*temp*0.5;
 		}
-		else if ((temp>=5) && true)
+		else if (temp==5)
 		{
-
+			if (sel.options[sel.selectedIndex].value == "ArgentinaLuz") 
+			{
+				result=result*temp*0.6;
+			}
+			else
+			{
+				result=result*temp*0.7;
+			}
 		}
-		else if ((temp>=4) && true)
+		else if (temp==4)
 		{
-
+			if ((sel.options[sel.selectedIndex].value == "ArgentinaLuz")  || (sel.options[sel.selectedIndex].value == "FelipeLamparas"))
+			{
+				result=result*temp*0.75;
+			}
+			else
+			{
+				result=result*temp*0.8;
+			}
 		}
-		else if ((temp>=3) && true)
+		else if (temp==3)
 		{
-
+			if (sel.options[sel.selectedIndex].value == "ArgentinaLuz") 
+			{
+				result=result*temp*0.85;
+			}
+			else if (sel.options[sel.selectedIndex].value == "FelipeLamparas")
+			{
+				result=result*temp*0.9;
+			}
+			else
+			{
+				result=result*temp*0.95;
+			}
 		}
-  		$scope.datos.PrecioDescuento=0;
+		else
+		{
+			result=result*temp;
+		}
+
+		if (result>=120) 
+		{
+			var impuesto = result*0.1;
+			alert("Usted pago "+impuesto+" de IIBB.");
+			$scope.datos.PrecioDescuento=result+impuesto;
+		}
+		else
+		{
+			$scope.datos.PrecioDescuento=result;
+		}
  	}
 });
